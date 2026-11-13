@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulado de placas e regras · Autoescola Copiauto</title>
+<meta name="description" content="10 perguntas de exemplo sobre placas, regras e direção defensiva, com correção na hora.">
+<meta name="theme-color" content="#C8102E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='32' rx='30' ry='22' fill='%23fff' stroke='%23C8102E' stroke-width='5'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-weight='900' font-size='22' fill='%23C8102E'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass:ital,wght@0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261113102804">
+</head>
+<body class="pagina-sim modo-auto">
+<header class="topo">
+  <a class="topo-logo" href="index.html" data-logo></a>
+  <nav class="topo-nav" aria-label="Seções"><a href="index.html#etapas">6 etapas</a><a href="aluno.html">Área do aluno</a><a class="bt bt-amarelo bt-mini" href="index.html#matricula">Pré-matrícula</a></nav>
+</header>
+<main class="pagina">
+  <div class="embrulho" style="max-width:820px">
+    <div class="sim-topo">
+      <img class="sim-foto" src="fotos/painel-lombada.jpg" alt="Painel do carro da Copiauto em aula, com a placa de lombada desenhada por cima do vídeo" width="640" height="670">
+      <div>
+        <h1>Simulado da prova teórica</h1>
+        <p>10 perguntas de exemplo sobre placas, regras e direção defensiva. Toque na resposta: a correção vem na hora.</p>
+        <p class="sim-aviso">Perguntas de exemplo, com base no Código de Trânsito. Não é o banco oficial da prova do Detran.</p>
+        <p id="sim-recorde" class="sim-aviso"></p>
+      </div>
+    </div>
+    <div class="sim-caixa" id="sim"></div>
+  </div>
+</main>
+<script src="assets/dados.js?v=20261113102804"></script>
+<script src="assets/simulado.js?v=20261113102804"></script>
+<script>
+(function () {
+  document.querySelector('[data-logo]').innerHTML = CP.logo('logo');
+  var r = CP.simulado();
+  if (r) document.getElementById('sim-recorde').textContent = 'Seu melhor resultado neste aparelho: ' + r.melhor + ' de ' + r.de + '.';
+  SIM.montar(document.getElementById('sim'), {});
+})();
+</script>
+</body>
+</html>

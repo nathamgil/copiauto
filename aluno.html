@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#C8102E">
+<title>Área do aluno · Autoescola Copiauto</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='32' rx='30' ry='22' fill='%23fff' stroke='%23C8102E' stroke-width='5'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-weight='900' font-size='22' fill='%23C8102E'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass:ital,wght@0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261113102804">
+</head>
+<body class="adm modo-auto">
+<main id="tela-login" class="login">
+  <form class="login-caixa" id="form-login" novalidate>
+    <span data-logo></span>
+    <h1>Área do aluno</h1>
+    <p>Suas próximas aulas, em que etapa da CNH você está e os avisos da autoescola.</p>
+    <div class="credencial" role="note"><b>Acesso de demonstração</b>Usuário: <code>aluno</code> · Senha: <code>copiauto</code></div>
+    <label for="l-user">Usuário</label><input type="text" id="l-user" autocomplete="username" autocapitalize="none">
+    <label for="l-senha">Senha</label><input type="password" id="l-senha" autocomplete="current-password">
+    <button class="bt bt-vermelho bt-largo" type="submit" style="margin-top:18px">Entrar</button>
+    <div id="login-erro" aria-live="polite"></div>
+    <p style="margin-top:16px"><a href="index.html" style="color:#9E0B22;font-weight:700">Voltar para o site</a></p>
+  </form>
+</main>
+
+<div id="tela-aluno" hidden>
+  <header class="adm-topo"><div class="embrulho"><b>Copiauto · área do aluno</b><span><a href="index.html">Site</a> <button id="sair" type="button">Sair</button></span></div></header>
+  <main class="adm-corpo"><div class="embrulho" id="corpo"></div></main>
+</div>
+
+<script src="assets/dados.js?v=20261113102804"></script>
+<script>
+(function () {
+  'use strict';
+  var esc = CP.esc, $ = function (s) { return document.querySelector(s); };
+  $('[data-logo]').innerHTML = CP.logo('logo');
+  function entrar() { $('#tela-login').hidden = true; $('#tela-aluno').hidden = false; desenha(); }
+  try { if (sessionStorage.getItem('cp_aluno')) entrar(); } catch (e) { /* */ }
+  $('#form-login').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if ($('#l-user').value.trim().toLowerCase() === 'aluno' && $('#l-senha').value === 'copiauto') { try { sessionStorage.setItem('cp_aluno', '1'); } catch (er) { /* */ } entrar(); }
+    else $('#login-erro').innerHTML = '<p class="erro">Usuário ou senha não conferem. Use os dados de demonstração acima.</p>';
+  });
+  $('#sair').addEventListener('click', function () { try { sessionStorage.removeItem('cp_aluno'); } catch (e) { /* */ } location.reload(); });
+
+  function eu() { return CP.alunos().filter(function (a) { return a.id === 'demo'; })[0]; }
+  function desenha() {
+    var a = eu();
+    if (!a) { $('#corpo').innerHTML = '<div class="caixa cheia"><p>Aluno de demonstração não encontrado. No painel, use Ajustes e volte aos dados de exemplo.</p></div>'; return; }
+    var hoje = CP.hojeISO(0);
+    var minhas = CP.aulas().filter(function (u) { return u.alunoId === a.id; });
+    var prox = minhas.filter(function (u) { return u.status === 'marcada' && u.data >= hoje; }).sort(function (x, y) { return (x.data + x.hora).localeCompare(y.data + y.hora); });
+    var feitas = minhas.filter(function (u) { return u.status === 'feita'; }).length;
+    var etapaAtual = CP.ETAPAS[a.etapa - 1] || CP.ETAPAS[0];
+    var sim = CP.simulado();
+    var nome = a.nome.replace(/ \(.*\)$/, '');
+    var avisos = CP.avisos();
+    $('#corpo').innerHTML = '<p class="aviso-demo">Demonstração: aluno, aulas, instrutores e avisos são fictícios.</p>' +
+      '<h2>Olá, ' + esc(nome) + '</h2>' +
+      '<p>' + esc(CP.categoria(a.categoria)) + ' · carro <span class="tag' + (a.cambio === 'automatico' ? ' auto' : '') + '">' + CP.cambioNome(a.cambio) + '</span> · ' + esc(CP.instrutor(a.instrutor)) + '</p>' +
+      '<h3>Sua CNH: etapa ' + a.etapa + ' de 6 (' + esc(etapaAtual.nome.toLowerCase()) + ')</h3><div class="caixa cheia"><ol class="trilha">' +
+      CP.ETAPAS.map(function (e) { return '<li data-n="' + e.id + '" class="' + (e.id < a.etapa ? 'feita' : e.id === a.etapa ? 'atual' : '') + '">' + esc(e.nome) + '</li>'; }).join('') +
+      '</ol><p style="margin:14px 0 0">' + esc(etapaAtual.txt) + '</p></div>' +
+      '<div class="resumo"><div><b>' + prox.length + '</b>aulas marcadas</div><div><b>' + feitas + '</b>aulas feitas</div><div><b>' + (sim ? sim.melhor + '/' + sim.de : '—') + '</b>melhor simulado</div></div>' +
+      '<h3>Próximas aulas práticas</h3><div class="caixa">' + (prox.length ? prox.map(function (u) {
+        var v = CP.veiculo(u.veiculo);
+        var msg = 'Olá, Copiauto! Sou ' + nome + ' (aluno). Preciso remarcar a aula prática de ' + CP.dataCurta(u.data) + ' às ' + u.hora + ' (' + v.nome + '). Quais horários vocês têm?';
+        return '<div class="linha-adm"><div><div class="t">' + CP.dataCurta(u.data) + ' · ' + esc(u.hora) + (u.data === hoje ? ' <span class="st st-nova">hoje</span>' : '') + '</div><div class="s">' + esc(v.nome) + ' · ' + esc(CP.instrutor(u.instrutor)) + '</div></div>' +
+          '<div class="acoes"><a class="mini-bt wa" target="_blank" rel="noopener" href="' + CP.wa(msg) + '">Remarcar no WhatsApp</a></div></div>';
+      }).join('') : '<p>Nenhuma aula marcada.</p>') + '</div>' +
+      '<p class="contato-acoes"><a class="bt bt-vermelho" target="_blank" rel="noopener" href="' + CP.wa('Olá, Copiauto! Sou ' + nome + ' (aluno). Quero marcar mais uma aula prática no carro ' + CP.cambioNome(a.cambio).toLowerCase() + '.') + '">Pedir mais uma aula</a><a class="bt bt-contorno" href="simulado.html">Treinar no simulado</a></p>' +
+      '<h3>Avisos da autoescola</h3><div class="caixa">' + (avisos.length ? avisos.map(function (v) { return '<div class="linha-adm"><div><div class="s">' + CP.dataCurta(v.data) + '</div><div class="t">' + esc(v.texto) + '</div></div></div>'; }).join('') : '<p>Sem avisos.</p>') + '</div>';
+  }
+})();
+</script>
+</body>
+</html>

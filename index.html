@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autoescola Copiauto · CNH no Itaigara, Salvador</title>
+<meta name="description" content="Autoescola Copiauto, no Ed. Max Center (Itaigara, Salvador). Primeira habilitação A, B e AB, adição de categoria, habilitação PCD e carro automático para aula e exame.">
+<meta name="theme-color" content="#C8102E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='32' rx='30' ry='22' fill='%23fff' stroke='%23C8102E' stroke-width='5'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-weight='900' font-size='22' fill='%23C8102E'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass:ital,wght@0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261113102804">
+</head>
+<body class="pg-inicio modo-auto">
+
+<header class="topo" id="topo">
+  <a class="topo-logo" href="index.html" data-logo></a>
+  <nav class="topo-nav" aria-label="Seções">
+    <a href="#etapas">6 etapas</a>
+    <a href="simulado.html">Simulado</a>
+    <a href="aluno.html">Área do aluno</a>
+    <a class="bt bt-amarelo bt-mini" href="#matricula">Pré-matrícula</a>
+  </nav>
+</header>
+
+<!-- ================= CENA-ASSINATURA: a prova prática no Detran ================= -->
+<section class="cena" id="cena" aria-label="A prova prática no Detran, dirigida pela rolagem">
+  <div class="palco">
+    <div class="mundo-moldura" aria-hidden="true">
+      <svg class="mundo" id="mundo" viewBox="0 0 400 2400" preserveAspectRatio="xMidYMin meet" focusable="false">
+        <defs>
+          <pattern id="p-concreto" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="#9BA1A6"/><path d="M0 80V0h80" fill="none" stroke="#878D92" stroke-width="2"/></pattern>
+          <pattern id="p-lomb" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="18" height="18" fill="#111"/><rect width="9" height="18" fill="#FFD400"/></pattern>
+          <pattern id="p-xadrez" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#fff"/><rect width="10" height="10" fill="#111"/><rect x="10" y="10" width="10" height="10" fill="#111"/></pattern>
+        </defs>
+        <!-- rua (percurso final) -->
+        <rect x="0" y="0" width="400" height="900" fill="#5E6872"/>
+        <g class="predios">
+          <rect x="0" y="16" width="54" height="170" fill="#B5452F"/><rect x="8" y="30" width="16" height="12" fill="#8E3524"/>
+          <rect x="0" y="200" width="54" height="230" fill="#7A8692"/><rect x="10" y="230" width="30" height="20" fill="#66717C"/>
+          <rect x="0" y="444" width="54" height="150" fill="#E2BE6E"/>
+          <rect x="0" y="608" width="54" height="292" fill="#8794A0"/><rect x="12" y="700" width="20" height="16" fill="#717D88"/>
+          <rect x="346" y="16" width="54" height="240" fill="#8794A0"/><rect x="360" y="60" width="22" height="18" fill="#717D88"/>
+          <rect x="346" y="270" width="54" height="190" fill="#C25A3A"/>
+          <rect x="346" y="474" width="54" height="120" fill="#E9E4D8"/>
+          <rect x="346" y="608" width="54" height="292" fill="#7A8692"/>
+        </g>
+        <rect x="56" y="0" width="34" height="900" fill="#CDD1D5"/>
+        <rect x="310" y="0" width="34" height="900" fill="#CDD1D5"/>
+        <g class="arvores" fill="#2F7D4A">
+          <circle cx="73" cy="120" r="15"/><circle cx="73" cy="330" r="15"/><circle cx="73" cy="520" r="13"/><circle cx="73" cy="780" r="15"/>
+          <circle cx="327" cy="90" r="14"/><circle cx="327" cy="400" r="15"/><circle cx="327" cy="700" r="15"/>
+        </g>
+        <!-- pátio de prova -->
+        <rect x="0" y="900" width="400" height="1500" fill="url(#p-concreto)"/>
+        <g stroke="#F2F2F2" stroke-width="3">
+          <line x1="0" y1="1900" x2="80" y2="1900"/><line x1="0" y1="1960" x2="80" y2="1960"/><line x1="0" y1="2020" x2="80" y2="2020"/><line x1="0" y1="2080" x2="80" y2="2080"/>
+        </g>
+        <!-- asfalto -->
+        <rect x="90" y="0" width="220" height="2400" fill="#26272B"/>
+        <rect x="96" y="0" width="4" height="2400" fill="#EDEDED"/>
+        <rect x="300" y="0" width="4" height="2400" fill="#EDEDED"/>
+        <!-- faixa central sendo pintada + a tampa que recua -->
+        <line x1="200" y1="0" x2="200" y2="2400" stroke="#FFD400" stroke-width="5" stroke-dasharray="34 24"/>
+        <g id="tampa">
+          <rect x="190" y="-2400" width="20" height="2400" fill="#26272B"/>
+          <rect x="187" y="-6" width="26" height="9" rx="3" fill="#FFD400"/>
+          <rect x="196" y="-22" width="8" height="16" fill="#C8102E"/>
+        </g>
+        <!-- baliza -->
+        <rect x="304" y="1630" width="76" height="200" fill="#2E2F33"/>
+        <path d="M304 1640 H372 V1820 H304" fill="none" stroke="#F2F2F2" stroke-width="2.5" stroke-dasharray="10 8"/>
+        <g class="cones">
+          <g transform="translate(316 1640)"><circle r="10" fill="#FF6A13"/><circle r="6" fill="#fff"/><circle r="3" fill="#FF6A13"/></g>
+          <g transform="translate(366 1640)"><circle r="10" fill="#FF6A13"/><circle r="6" fill="#fff"/><circle r="3" fill="#FF6A13"/></g>
+          <g transform="translate(316 1822)"><circle r="10" fill="#FF6A13"/><circle r="6" fill="#fff"/><circle r="3" fill="#FF6A13"/></g>
+          <g transform="translate(366 1822)"><circle r="10" fill="#FF6A13"/><circle r="6" fill="#fff"/><circle r="3" fill="#FF6A13"/></g>
+        </g>
+        <text x="150" y="1735" transform="rotate(-90 150 1735)" text-anchor="middle" font-family="Overpass,Arial,sans-serif" font-weight="900" font-size="30" fill="#F2F2F2" opacity=".85">BALIZA</text>
+        <!-- rampa da meia embreagem -->
+        <rect x="100" y="1250" width="200" height="170" fill="#3A3C42"/>
+        <g fill="none" stroke="#F2F2F2" stroke-width="5" opacity=".8">
+          <path d="M120 1300 l30 -22 l30 22"/><path d="M220 1300 l30 -22 l30 22"/>
+          <path d="M120 1380 l30 -22 l30 22"/><path d="M220 1380 l30 -22 l30 22"/>
+        </g>
+        <text x="200" y="1350" text-anchor="middle" font-family="Overpass,Arial,sans-serif" font-weight="900" font-size="28" fill="#FFD400">RAMPA</text>
+        <!-- lombada + placa -->
+        <rect x="96" y="950" width="208" height="26" fill="url(#p-lomb)"/>
+        <g transform="translate(352 1040)">
+          <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)" fill="#FFD400" stroke="#111" stroke-width="4"/>
+          <path d="M-17 8 H-9 C-7 -6 7 -6 9 8 H17 V13 H-17Z" fill="#111"/>
+        </g>
+        <!-- faixa de pedestres -->
+        <g fill="#F2F2F2">
+          <rect x="106" y="600" width="11" height="44"/><rect x="128" y="600" width="11" height="44"/><rect x="150" y="600" width="11" height="44"/><rect x="172" y="600" width="11" height="44"/>
+          <rect x="216" y="600" width="11" height="44"/><rect x="238" y="600" width="11" height="44"/><rect x="260" y="600" width="11" height="44"/><rect x="282" y="600" width="11" height="44"/>
+        </g>
+        <!-- chegada e largada -->
+        <rect x="100" y="198" width="200" height="22" fill="url(#p-xadrez)"/>
+        <text x="200" y="176" text-anchor="middle" font-family="Overpass,Arial,sans-serif" font-weight="900" font-size="26" fill="#F2F2F2">CHEGADA</text>
+        <rect x="100" y="2306" width="200" height="6" fill="#F2F2F2"/>
+        <text x="200" y="2350" text-anchor="middle" font-family="Overpass,Arial,sans-serif" font-weight="900" font-size="24" fill="#F2F2F2">PROVA PRÁTICA</text>
+        <text x="200" y="2378" text-anchor="middle" font-family="Overpass,Arial,sans-serif" font-weight="800" font-size="15" fill="#FFD400">DETRAN · BAHIA</text>
+        <!-- o carro da Copiauto, visto de cima -->
+        <g id="carro" transform="translate(255 2250)">
+          <rect x="-21" y="-38" width="48" height="84" rx="14" fill="#000" opacity=".3"/>
+          <rect x="-22" y="-42" width="44" height="84" rx="13" fill="#fff" stroke="#AEB4BA" stroke-width="1.2"/>
+          <path d="M-22 -24 L0 -33 L22 -24 L22 -17 L0 -26 L-22 -17Z" fill="#FFD400"/>
+          <rect x="-22" y="-17" width="6" height="52" fill="#FFD400"/><rect x="16" y="-17" width="6" height="52" fill="#FFD400"/>
+          <rect x="-22" y="-2" width="3" height="40" fill="#C8102E"/><rect x="19" y="-2" width="3" height="40" fill="#C8102E"/>
+          <path d="M-17 -16 L17 -16 L14 -4 L-14 -4Z" fill="#1C2733"/>
+          <rect x="-15" y="-4" width="30" height="26" rx="4" fill="#fff"/>
+          <rect x="-10" y="2" width="20" height="11" rx="2" fill="#C8102E"/>
+          <path d="M-14 22 L14 22 L16 31 L-16 31Z" fill="#1C2733"/>
+          <rect x="-28" y="-13" width="7" height="5" rx="1.5" fill="#fff" stroke="#AEB4BA"/><rect x="21" y="-13" width="7" height="5" rx="1.5" fill="#fff" stroke="#AEB4BA"/>
+          <rect x="-18" y="-42" width="9" height="3" fill="#FFF3A6"/><rect x="9" y="-42" width="9" height="3" fill="#FFF3A6"/>
+          <rect x="-19" y="39" width="9" height="3" fill="#8A0C1F"/><rect x="10" y="39" width="9" height="3" fill="#8A0C1F"/>
+          <g id="freio" opacity="0"><circle cx="-14" cy="44" r="9" fill="#FF2A2A" opacity=".55"/><circle cx="14" cy="44" r="9" fill="#FF2A2A" opacity=".55"/></g>
+        </g>
+      </svg>
+    </div>
+
+    <ol class="legendas" id="legendas">
+      <li class="leg leg-intro" data-de="0" data-ate=".11">
+        <p class="leg-grande">Hoje é dia de prova.</p>
+        <p>Role a tela e dirija: do pátio do Detran até o percurso final.</p>
+      </li>
+      <li class="leg" data-de=".13" data-ate=".37">
+        <h2>Baliza</h2>
+        <p>Entra de ré entre os cones e para dentro da vaga. Sem encostar em nada.</p>
+      </li>
+      <li class="leg" data-de=".41" data-ate=".56">
+        <h2 class="so-manual">Meia embreagem</h2><h2 class="so-auto">Rampa sem embreagem</h2>
+        <p class="so-manual">Na rampa, o pé acha o ponto da embreagem e segura o carro sem deixar voltar.</p>
+        <p class="so-auto">No automático não tem pedal de embreagem: é freio e acelerador. E a CNH sai sem restrição por isso.</p>
+      </li>
+      <li class="leg" data-de=".58" data-ate=".71">
+        <h2 class="leg-placa">Lombada à frente</h2>
+        <p class="so-manual leg-fala">“Tem que reduzir pra segunda.”</p>
+        <p class="so-auto leg-fala">Pé no freio antes da lombada. O câmbio troca sozinho.</p>
+        <p class="leg-fonte so-manual">Frase de um vídeo de aula da Copiauto.</p>
+      </li>
+      <li class="leg" data-de=".73" data-ate=".89">
+        <h2>Percurso final</h2>
+        <p class="leg-fala">“Depois da baliza e da meia embreagem, é aqui que o aluno mostra segurança e controle na rua.”</p>
+        <p class="leg-fonte">@copiauto, sobre a prova prática no Detran Bahia</p>
+      </li>
+    </ol>
+
+    <div class="painel-carro">
+      <div class="marcha" aria-live="off"><span class="marcha-rot">marcha</span><b id="marcha">1</b></div>
+      <button class="seletor" type="button" role="switch" aria-checked="true" data-seletor>
+        <span class="seletor-txt">Câmbio da aula e da prova</span>
+        <span class="seletor-trilho"><span class="seletor-lado lado-man">MANUAL</span><span class="seletor-lado lado-auto">AUTOMÁTICO</span><span class="seletor-bola" aria-hidden="true"></span></span>
+      </button>
+      <div class="trajeto" aria-hidden="true"><span id="trajeto"></span></div>
+    </div>
+
+    <div class="revela" id="revela">
+      <img src="fotos/carro-perto.jpg" alt="Carro da Autoescola Copiauto: branco, com faixa amarela e vermelha e o logo no lado" width="576" height="942">
+      <div class="revela-txt">
+        <h1><span class="h1-marca">Autoescola Copiauto</span> Sua CNH do seu jeito, no manual ou no automático.</h1>
+        <p>Primeira habilitação (A, B e AB), adição de categoria, habilitação PCD. No Ed. Max Center, Itaigara.</p>
+        <div class="revela-acoes">
+          <a class="bt bt-amarelo" href="#matricula">Fazer minha pré-matrícula</a>
+          <a class="link-claro" href="#etapas">Ver as 6 etapas da CNH</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Manual ou automático ================= -->
+<section class="faixa-amarela" id="cambio">
+  <div class="embrulho cambio-grade">
+    <div class="cambio-txt">
+      <h2 class="titulo-xl">Agora você escolhe: manual ou automático.</h2>
+      <p class="destaque">Aula prática e exame no Detran no carro automático. <b>Sua CNH não terá nenhuma restrição por conta disso.</b></p>
+      <ul class="lista-check">
+        <li>Veículo automático novo, sempre rodando com ar-condicionado</li>
+        <li>Veículo disponível para o exame, com acompanhamento do instrutor(a)</li>
+        <li>Mínimo de 2 aulas práticas (exigido para as categorias A e B)</li>
+        <li>Início imediato e horários flexíveis</li>
+      </ul>
+      <div class="cambio-escolha">
+        <button class="seletor seletor-claro" type="button" role="switch" aria-checked="true" data-seletor>
+          <span class="seletor-txt">Sua escolha</span>
+          <span class="seletor-trilho"><span class="seletor-lado lado-man">MANUAL</span><span class="seletor-lado lado-auto">AUTOMÁTICO</span><span class="seletor-bola" aria-hidden="true"></span></span>
+        </button>
+        <p class="cambio-nota">Ela já vai marcada na sua pré-matrícula.</p>
+      </div>
+    </div>
+    <figure class="cambio-foto">
+      <img src="fotos/carro-patio.jpg" alt="Carro da Copiauto estacionado no pátio de concreto" width="720" height="820" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ================= Sua CNH em 6 etapas (estrada) ================= -->
+<section class="etapas" id="etapas">
+  <div class="embrulho">
+    <h2 class="titulo-xl claro">Sua CNH em 6 etapas</h2>
+    <p class="sub-claro">As direções em cada uma delas. Quem é aluno acompanha em que parada está na <a href="aluno.html">área do aluno</a>.</p>
+  </div>
+  <div class="estrada" id="estrada">
+    <div class="estrada-pista" aria-hidden="true"><span class="estrada-carro" id="estrada-carro"></span></div>
+    <ol class="paradas" id="paradas"></ol>
+  </div>
+</section>
+
+<!-- ================= O que a Copiauto faz ================= -->
+<section class="servicos" id="servicos">
+  <div class="embrulho estreito">
+    <h2 class="titulo-xl">O que dá pra fazer na Copiauto</h2>
+    <ul class="serv-lista" id="serv-lista">
+      <li class="serv">
+        <span class="serv-cat" aria-hidden="true">A&nbsp;B</span>
+        <div><h3>Primeira habilitação</h3><p>Categorias A (moto), B (carro) ou as duas juntas (AB).</p></div>
+        <a class="serv-ir" href="#matricula" data-cat="B">Quero tirar</a>
+      </li>
+      <li class="serv">
+        <span class="serv-cat" aria-hidden="true">+</span>
+        <div><h3>Adição de categoria</h3><p>Já dirige carro e quer moto, ou o contrário.</p></div>
+        <a class="serv-ir" href="#matricula" data-cat="addA">Quero adicionar</a>
+      </li>
+      <li class="serv serv-pcd">
+        <span class="serv-cat" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34"><circle cx="11" cy="4" r="2.2" fill="currentColor"/><path d="M10 7.5v6h6l3 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 10.5a5.5 5.5 0 1 0 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        <div><h3>Habilitação PCD</h3><p>Informe suas restrições e receba atendimento especializado.</p></div>
+        <a class="serv-ir" href="#matricula" data-pcd="1">Falar das minhas restrições</a>
+      </li>
+      <li class="serv">
+        <span class="serv-cat" aria-hidden="true">D</span>
+        <div><h3>Carro automático na aula e no exame</h3><p>Mais conforto e tranquilidade durante o aprendizado, sem restrição na CNH.</p></div>
+        <a class="serv-ir" href="#matricula" data-cambio="automatico">Quero no automático</a>
+      </li>
+      <li class="serv">
+        <span class="serv-cat serv-cat-txt" aria-hidden="true">laudo</span>
+        <div><h3>Laudo médico e psicológico</h3><p>Ainda não tirou o seu laudo? Na Autoescola Copiauto você tira o seu laudo.</p></div>
+        <a class="serv-ir" href="#matricula">Perguntar</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= Simulado (amostra) ================= -->
+<section class="sim-faixa" id="simulado">
+  <div class="embrulho sim-grade">
+    <div class="sim-intro">
+      <h2 class="titulo-xl claro">Aquece pra prova teórica</h2>
+      <p class="sub-claro">Três perguntas de exemplo sobre placas e regras de trânsito. Resposta na hora.</p>
+      <a class="bt bt-amarelo" href="simulado.html">Fazer o simulado completo (10 perguntas)</a>
+    </div>
+    <div class="sim-caixa" id="sim-mini"></div>
+  </div>
+</section>
+
+<!-- ================= Pré-matrícula ================= -->
+<section class="matricula" id="matricula">
+  <div class="embrulho mat-grade">
+    <form class="mat-form" id="form-mat" novalidate>
+      <h2 class="titulo-xl">Pré-matrícula</h2>
+      <p>Preencha e a mensagem sai pronta no WhatsApp da Copiauto. Ninguém cobra nada por aqui.</p>
+      <label for="m-nome">Seu nome</label>
+      <input id="m-nome" name="nome" type="text" autocomplete="name" required>
+      <label for="m-cat">O que você quer tirar</label>
+      <select id="m-cat" name="categoria"></select>
+      <fieldset class="opcoes"><legend>Carro da aula e da prova</legend>
+        <label><input type="radio" name="cambio" value="automatico" checked> Automático</label>
+        <label><input type="radio" name="cambio" value="manual"> Manual</label>
+      </fieldset>
+      <fieldset class="opcoes"><legend>Habilitação PCD?</legend>
+        <label><input type="radio" name="pcd" value="nao" checked> Não</label>
+        <label><input type="radio" name="pcd" value="sim"> Sim</label>
+      </fieldset>
+      <div id="m-restr-caixa" hidden>
+        <label for="m-restr">Quer contar suas restrições? (opcional)</label>
+        <textarea id="m-restr" name="restricoes" rows="2"></textarea>
+      </div>
+      <fieldset class="opcoes"><legend>Melhor turno para as aulas</legend>
+        <label><input type="radio" name="turno" value="manha"> Manhã</label>
+        <label><input type="radio" name="turno" value="tarde"> Tarde</label>
+        <label><input type="radio" name="turno" value="noite"> Noite</label>
+        <label><input type="radio" name="turno" value="qualquer" checked> Tanto faz</label>
+      </fieldset>
+      <div id="m-erro" aria-live="polite"></div>
+      <button class="bt bt-vermelho bt-largo" type="submit">Mandar no WhatsApp</button>
+    </form>
+    <aside class="cnh" aria-label="Prévia da sua pré-matrícula">
+      <div class="cnh-topo"><span>CNH do seu jeito</span><span data-logo-mini></span></div>
+      <div class="cnh-corpo">
+        <div class="cnh-foto" aria-hidden="true"><svg viewBox="0 0 60 70"><circle cx="30" cy="24" r="13" fill="#B9C2B0"/><path d="M6 70c2-18 12-26 24-26s22 8 24 26Z" fill="#B9C2B0"/></svg></div>
+        <dl>
+          <dt>Nome</dt><dd id="c-nome">Seu nome aqui</dd>
+          <dt>Categoria</dt><dd id="c-cat">—</dd>
+          <dt>Câmbio</dt><dd id="c-cambio">—</dd>
+          <dt>Turno</dt><dd id="c-turno">—</dd>
+        </dl>
+      </div>
+      <p class="cnh-pcd" id="c-pcd" hidden>PCD · atendimento especializado</p>
+      <p class="cnh-rodape">Prévia ilustrativa, não é documento.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= Canal oficial / alerta de golpe ================= -->
+<section class="golpe" id="golpe">
+  <div class="embrulho golpe-grade">
+    <svg class="golpe-placa" viewBox="0 0 120 106" aria-hidden="true"><path d="M60 6 L114 100 H6Z" fill="#FFD400" stroke="#111" stroke-width="7" stroke-linejoin="round"/><rect x="55" y="36" width="10" height="38" rx="3" fill="#111"/><circle cx="60" cy="86" r="6" fill="#111"/></svg>
+    <div>
+      <h2 class="titulo-xl claro">Alerta de golpe</h2>
+      <p class="sub-claro">Golpistas estão enviando boletos falsos se passando por autoescolas. Para sua segurança:</p>
+      <ul class="golpe-lista">
+        <li>Não realizamos cobranças via boleto.</li>
+        <li>Não solicitamos pagamento por links suspeitos.</li>
+        <li>Em caso de dúvida, fale diretamente com a nossa equipe.</li>
+      </ul>
+      <p class="golpe-canal"><b>Canal oficial:</b> WhatsApp <a href="https://wa.me/5571991556090">(71) 99155-6090</a> · fixos <a href="tel:+557133582499">(71) 3358-2499</a> e <a href="tel:+557133531195">(71) 3353-1195</a> · Instagram <a href="https://instagram.com/copiauto" target="_blank" rel="noopener">@copiauto</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Contato ================= -->
+<section class="contato" id="contato">
+  <div class="embrulho contato-grade">
+    <div>
+      <h2 class="titulo-xl">Ed. Max Center, Itaigara</h2>
+      <p class="end">Av. ACM, 846 · Ed. Max Center, salas 226 e 227<br>Itaigara, Salvador · BA · CEP 41825-902</p>
+      <p class="contato-acoes">
+        <a class="bt bt-vermelho" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida%20ACM%20846%20Edificio%20Max%20Center%20Itaigara%20Salvador%20BA" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="bt bt-contorno" href="https://wa.me/5571991556090?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20CNH." target="_blank" rel="noopener">WhatsApp (71) 99155-6090</a>
+      </p>
+      <p>Telefones fixos: <a href="tel:+557133582499">(71) 3358-2499</a> · <a href="tel:+557133531195">(71) 3353-1195</a></p>
+    </div>
+    <figure class="contato-foto">
+      <img src="fotos/patio-aluna.jpg" alt="Aluna caminhando até o carro da Copiauto no pátio" width="640" height="659" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="embrulho rodape-grade">
+    <span data-logo-mini></span>
+    <nav aria-label="Rodapé"><a href="simulado.html">Simulado</a><a href="aluno.html">Área do aluno</a><a href="admin.html">Painel da autoescola</a><a href="https://instagram.com/copiauto" target="_blank" rel="noopener">@copiauto</a></nav>
+    <p class="rodape-zync">Site de demonstração feito pela Zync.</p>
+  </div>
+</footer>
+
+<a class="wa-flutua" href="https://wa.me/5571991556090" target="_blank" rel="noopener" aria-label="Falar com a Copiauto no WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.7-.3Z"/></svg></a>
+
+<script src="assets/dados.js?v=20261113102804"></script>
+<script src="assets/simulado.js?v=20261113102804"></script>
+<script src="assets/site.js?v=20261113102804"></script>
+</body>
+</html>
